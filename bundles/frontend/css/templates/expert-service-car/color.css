@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+/* Inicialitzem
+--------------------------------------------------------- */
+
+body {color: #595e8f;}
+h1 {color: #dd1c15;}
+h2 {color: #212d56;}
+.line {border-bottom-color: #dd1c15;}
+h3 {color: #dd1c15;}
+h4 {color: #FFF;}
+select, select.form-select, input[type=text], input[type=file], input[type=email], input[type=checkbox], textarea {background-color: #FFF!important; border-color: #212d56!important; color: #666!important;}
+.btn-all, .btn-all:active, .btn-all:focus {background-color: #dd1c15; color: #FFF;}
+.btn-all:hover {background-color: #9a0525; border-color: #9a0525; color: #dd1c15;}
+label.form-label {color: #212d56;}
+
+/* Customize the label (the container) */
+label.txt-contact {color: #595e8f;}
+
+/* Create a custom checkbox */
+.checkmark {background-color: #FFF; border-color: #212d56;}
+
+/* On mouse-over, add a grey background color */
+label.txt-contact:hover input ~ .checkmark {background-color: #FFF;}
+
+/* When the checkbox is checked, add a blue background */
+label.txt-contact input:checked ~ .checkmark {background-color: #212d56;}
+
+/* Style the checkmark/indicator */
+label.txt-contact .checkmark:after {border-color: #FFF;}
+
+.form-floating>label {color: #666;}
+.form-floating>.form-control:focus~label, .form-floating>.form-control:not(:placeholder-shown)~label, .form-floating>.form-select~label {color: #212d56;}
+
+/* Header
+--------------------------------------------------------- */
+
+.bg-color-header {background: #FFF;}
+
+/* Menu
+--------------------------------------------------------- */
+
+.bg-color-nav {background: #212d56;}
+.bg-banner {background: #212d56;}
+.shadow {box-shadow: 0 3px 10px rgba(0,0,0,.5)!important;}
+.navbar-nav {color: #212d56!important;}
+.navbar-light .navbar-nav .nav-link {color: #FFF; border-bottom: 2px solid #212d56; border-top: 2px solid #212d56;}
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {color: #FFF;}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {border-bottom: 2px solid #dd1c15; color: #FFF;}
+.navbar-light .navbar-nav .nav-link.active {border-bottom: 2px solid #dd1c15; color: #FFF;}
+.dropdown-menu {background-color: #ececec; color: #212d56;}
+.dropdown-menu li {border-color: #ccc;}
+.dropdown-item {color: #6f6f6e;}
+.dropdown-item:hover {background-color: #9a0525; color: #dd1c15;}
+.navbar-light .navbar-toggler-icon svg {fill: #FFF;}
+.navbar-light .navbar-toggler {color: rgba(0,0,0,0);}
+ul.navbar-nav li.nav-item {border-color: #212d56;}
+ul.navbar-nav li.nav-item:last-child {border-color: #212d56;}
+.navbar-light .navbar-nav .dropdown-menu .dropdown-item.active {background-color: #dd1c15; color: #FFF;}
+
+/* HOME - Banner our services & Services
+--------------------------------------------------------- */
+
+.bg-banner h2 {color: #FFF;}
+.bg-banner .line {border-bottom-color: #dd1c15;}
+.bg-services {background-color: #ececec;}
+a .bg-services {background-color: #ececec;}
+.bg-services .bg-icon {background-color: #212d56;}
+.bg-services .bg-icon svg {fill: #FFF;}
+.bg-services p {color: #595e8f;}
+.btn-services, .btn-services:active, .btn-services:focus {background-color: #dd1c15;}
+.btn-services:hover {background-color: #9a0525; border-color: #9a0525; color: #dd1c15;}
+
+/* HOME - Banner other services
+--------------------------------------------------------- */
+
+.bg-request {background-color: #ececec;}
+.bg-request a {background-color: #212d56;}
+.bg-request a:hover {background-color: #595e8f; color: #212d56;}
+
+/* HOME - Banner good tips
+--------------------------------------------------------- */
+
+.img-tip .box-tip {border-color: #212d56;}
+.img-tip .box-tip p {color: #595e8f;}
+.img-tip .box-tip p.title-tip {background-color: #212d56; color: #FFF;}
+
+/* Vehicles for sale
+--------------------------------------------------------- */
+
+.filters {border-color: #dd1c15;}
+.btn-filter svg.filter {fill: #FFF;}
+.btn-filter:hover svg.filter {fill: #dd1c15;}
+ul.content-pagination {border-color: #dd1c15;}
+.page-item .page-link, .page-item .page-link:focus {border-color: #dd1c15; color: #dd1c15;}
+.page-link:hover {background-color: rgba(0, 0, 0, 0.05); border-color: rgba(0, 0, 0, 0.05); color: #58585a;}
+.page-item.active .page-link {background: #dd1c15; border-color: #dd1c15; color: #FFF;}
+
+/* Galleries (Offers, Vehicles, Gallery img)
+--------------------------------------------------------- */
+
+.box-gallery {border-color: #212d56;}
+.box-gallery a:last-child {background: #212d56;}
+.box-gallery a:hover:last-child {background: #595e8f; color: #212d56;}
+.img-gallery p, .img-gallery .table-gallery {color: #595e8f;}
+.img-gallery .table-gallery tr td {color: #595e8f;}
+.img-gallery .price-gallery {color: #bd1622;}
+.img-gallery-detail .title-gallery-detail {background-color: #212d56; color: #FFF;}
+.img-gallery-detail .table-gallery-detail, .img-gallery-detail .table-vehicle-detail {border-color: #212d56;}
+.img-gallery-detail .table-gallery-detail tr td, .img-gallery-detail .table-vehicle-detail tr td {color: #595e8f;}
+.img-gallery-detail .table-gallery-detail .price-gallerygallery-detail {color: #bd1622;}
+.form-contact .input-group-text {background-color: #ced4da;}
+.bg-gallery svg.refresh {fill: #212d56;}
+.bg-gallery svg.close, .bg-gallery svg.print {fill: #212d56;}
+.gdpr a, .gdpr a:active, .gdpr a:focus {color: #e00525;}
+
+/* Contact
+--------------------------------------------------------- */
+
+.form-contact .input-group-text {background-color: transparent;}
+.bg-contact svg.refresh {fill: #212d56;}
+
+/* Suscribe Offer
+--------------------------------------------------------- */
+
+.bg-offer {background-color: #212d56; color: #FFF;}
+.bg-offer select, .bg-offer select.form-select, .bg-offer input[type=text], .bg-offer input[type=file], .bg-offer input[type=email], .bg-offer input[type=checkbox], .bg-offer textarea {background-color: #FFF; color: #666;}
+label.txt-checkbox a {color: #dd1c15;}
+.btn-offer, .btn-offer:active, .btn-offer:focus {background-color: transparent; border-color: #FFF;}
+.btn-offer:hover {background-color: #595e8f; border-color: #595e8f; color: #212d56;}
+
+/* Customize the label (the container) */
+label.txt-checkbox {color: #FFF;}
+
+/* Create a custom checkbox */
+.bg-offer .checkmark {background-color: #FFF;}
+
+/* On mouse-over, add a grey background color */
+label.txt-checkbox:hover input ~ .checkmark {background-color: #FFF;}
+
+/* When the checkbox is checked, add a blue background */
+label.txt-checkbox input:checked ~ .checkmark {background-color: #dd1c15;}
+
+/* Style the checkmark/indicator */
+label.txt-checkbox .checkmark:after {border-color: #FFF;}
+
+/* SubFooter
+--------------------------------------------------------- */
+
+.bg-subfooter {background-color: #dd1c15; color: #FFF;}
+
+/* Footer
+--------------------------------------------------------- */
+
+footer ul span {color: #d9d9d9;}
+footer a {color: #d9d9d9;}
+footer a:hover {color: #dd1c15;}
+.bg-footer {background-color: #1d1d1b; color: #d9d9d9;}
+footer ul.social-media li {background-color: transparent; color: transparent;}
+footer .copyright {border-color: #d9d9d9;}

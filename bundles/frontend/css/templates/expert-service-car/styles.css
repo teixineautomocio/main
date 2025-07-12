@@ -1,0 +1,488 @@
+@charset "UTF-8";
+
+/* Reset
+--------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Font face
+--------------------------------------------------------- */
+
+@font-face {
+  font-family: 'opensansbold';
+  src: url('../../../fonts/OpenSans-Bold.eot');
+  src: url('../../../fonts/OpenSans-Bold.woff2') format('woff2'),
+       url('../../../fonts/OpenSans-Bold.woff') format('woff'),
+       url('../../../fonts/OpenSans-Bold.ttf') format('truetype'),
+       url('../../../fonts/OpenSans-Bold.svg') format('svg'),
+       url('../../../fonts/OpenSans-Bold.eot%3F') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'opensansextrabold';
+  src: url('../../../fonts/OpenSans-ExtraBold.eot');
+  src: url('../../../fonts/OpenSans-ExtraBold.woff2') format('woff2'),
+       url('../../../fonts/OpenSans-ExtraBold.woff') format('woff'),
+       url('../../../fonts/OpenSans-ExtraBold.ttf') format('truetype'),
+       url('../../../fonts/OpenSans-ExtraBold.svg') format('svg'),
+       url('../../../fonts/OpenSans-ExtraBold.eot%3F') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'opensansregular';
+  src: url('../../../fonts/OpenSans-Regular.eot');
+  src: url('../../../fonts/OpenSans-Regular.woff2') format('woff2'),
+       url('../../../fonts/OpenSans-Regular.woff') format('woff'),
+       url('../../../fonts/OpenSans-Regular.ttf') format('truetype'),
+       url('../../../fonts/OpenSans-Regular.svg') format('svg'),
+       url('../../../fonts/OpenSans-Regular.eot%3F') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'opensansitalic';
+  src: url('../../../fonts/OpenSans-Italic.eot');
+  src: url('../../../fonts/OpenSans-Italic.woff2') format('woff2'),
+       url('../../../fonts/OpenSans-Italic.woff') format('woff'),
+       url('../../../fonts/OpenSans-Italic.ttf') format('truetype'),
+       url('../../../fonts/OpenSans-Italic.svg') format('svg'),
+       url('../../../fonts/OpenSans-Italic.eot%3F') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../../../fonts/fa-solid-900.eot');
+  src: url('../../../fonts/fa-solid-900.woff2') format('woff2'),
+       url('../../../fonts/fa-solid-900.woff') format('woff'),
+       url('../../../fonts/fa-solid-900.ttf') format('truetype'),
+       url('../../../fonts/fa-solid-900.svg') format('svg'),
+       url('../../../fonts/fa-solid-900.eot%3F') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* Inicialitzem
+--------------------------------------------------------- */
+
+body {min-width: 320px; font-size: 16px; font-family: 'opensansregular', arial, sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.4;}
+a {text-decoration: none; cursor: pointer;}
+b, strong {font-family: 'opensansbold', arial, sans-serif; font-weight: bold;}
+i {font-family: 'opensansitalic', arial, sans-serif; font-style: italic;}
+h1 {font-family: 'opensansextrabold', arial, sans-serif; font-size: 24px; text-transform: uppercase;}
+h2 {font-family: 'opensansbold', arial, sans-serif; font-size: 30px; /*border-style: solid; border-bottom-width: 1px;*/ text-align: center; padding: 0 0 .5em 0;}
+.line {border-style: solid; border-bottom-width: 1px; margin: 0 .75em 2em .75em;}
+h3 {font-family: 'opensansextrabold', arial, sans-serif; font-size: 20px; margin: 0 0 .5em 0; line-height: 1.2;}
+h4 {line-height: 1.2; padding: 0 1em 2em 1em; font-family: 'opensansregular', arial, sans-serif; font-size: 18px; text-align: center;}
+img {width: 100%;}
+img.captcha {border-radius: 0; width: auto; max-height: 34px;}
+p {width: 100%;}
+.dropdown:hover>.dropdown-menu {display: block;}
+select, input[type=text], input[type=file], textarea {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   -ms-appearance: none;
+   -o-appearance: none;
+}
+select, select.form-select, input[type=text], input[type=file], input[type=email], input[type=checkbox], textarea {border-style: solid!important; border-width: 2px!important; border-radius: 0!important; padding: .5em;}
+select, select.form-select, input[type=checkbox] {cursor: pointer;}
+textarea {width: 100%;}
+.btn-all, .btn-all:active, .btn-all:focus {border: 0; border-radius: 0; width: 100%; padding: 1em .5em; text-align: center;}
+.mt-btn-all {margin-top: -0.1em;}
+label.form-label {font-family: 'opensansbold', arial, sans-serif;}
+
+/* Customize the label (the container) */
+label.txt-contact {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: left;
+}
+
+/* Hide the browser's default checkbox */
+label.txt-contact input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 1px;
+  height: 1px;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 0;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+label.txt-contact input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+label.txt-contact .checkmark:after {
+  left: 3px;
+  top: 0;
+  width: 5px;
+  height: 9px;
+  border-style: solid; 
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.form-floating>.form-control {padding: 0.5em 1em;}
+.form-floating>label {padding-left: 1em;}
+.bg-offer .form-floating>label {padding-left: 2em;}
+.form-floating>.form-select {padding-left: 1em;}
+textarea.form-control {min-height: 222px;}
+
+/* Alerts
+--------------------------------------------------------- */
+.alert {position: relative; top: 0; padding: .75rem 1.25rem; margin-bottom: 0; border: 1px solid transparent; border-radius: 0; text-align: center;}
+.alert-primary {color: #004085; background-color: #cce5ff; border-color: #b8daff;}
+.alert-success {color: #155724; background-color: #d4edda; border-color: #c3e6cb;}
+.alert-danger {color: #721c24; background-color: #f8d7da; border-color: #f5c6cb;}
+.alert-warning {color: #856404; background-color: #fff3cd; border-color: #ffeeba;}
+.alert-dismissible .btn-close {position: inherit; top: inherit; right: inherit; z-index: inherit; padding: 0; vertical-align: middle;}
+
+/* Header
+--------------------------------------------------------- */
+
+.bg-color-header {
+  position: relative;
+  z-index: 1090;
+}
+.bg-color-header a img {border-radius: 0;}
+
+/* Menu
+--------------------------------------------------------- */
+
+.navbar {padding-top: 0.3rem; padding-bottom: 0.3rem;}
+.navbar-nav {font-family: 'opensansregular', arial, sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; text-transform: uppercase;}
+.navbar-light .navbar-nav .nav-link {transition: none; padding-left: 1em; padding-right: 1em; margin: .3em 0;}
+.navbar-light .navbar-nav .nav-link.active {pointer-events: none; border-radius: 0;}
+.dropdown-item {text-transform: none; font-size: 14px;}
+.dropdown-menu {border-radius: 0; padding: 0;}
+.dropdown-menu li {border-bottom-style: solid; border-bottom-width: 1px;}
+.dropdown-menu li:last-child {border-bottom: none;}
+.dropdown-item {padding-top: .5em; padding-bottom: .5em;}
+.dropdown-toggle::after {border: none; font-family: 'FontAwesome'; content: "\f107"; float: right; margin-left: 0.7em; margin-top: 0.05em;}
+.navbar-light .navbar-toggler-icon {background-image: none; width: 30px; height: 30px;}
+.navbar-light .navbar-toggler-icon svg {width: inherit; height: inherit;}
+.navbar-light .navbar-toggler {border: none;}
+ul.navbar-nav li.nav-item {border-top-style: solid; border-top-width: 1px;}
+ul.navbar-nav li.nav-item:last-child {border-bottom-style: solid; border-bottom-width: 1px;}
+.navbar-light .navbar-nav .dropdown-menu .dropdown-item.active {pointer-events: none;}
+
+/* Slider
+--------------------------------------------------------- */
+
+#carouselMain .carousel-item {height: 400px; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;}
+#carouselMain .carousel-control-prev-icon, .carousel-control-next-icon {background-image: none; width: 3em; height: 3em;}
+#carouselMain .carousel-indicators [data-bs-target] {width: 10px; height: 10px; border-radius: 100%;}
+
+/* HOME - Banner our services & Services
+--------------------------------------------------------- */
+
+.bg-services {height: 100%; padding: 1em;}
+.bg-services .bg-icon {width: 50px; height: 50px; border-radius: 100%; margin: 0 auto 0.5em;}
+.bg-services .bg-icon svg {width: inherit; height: inherit;}
+.bg-services p {text-align: center; font-size: 14px; margin-top: .7em;}
+.btn-services, .btn-services:active, .btn-services:focus {border: 0; border-radius: 0; width: 100%; padding: 1em 0;}
+
+/* HOME - Banner other services
+--------------------------------------------------------- */
+
+.bg-request .img-request {margin-bottom: -0.3em;}
+.bg-request .img-request a {display: block;}
+
+/* HOME - Banner good tips
+--------------------------------------------------------- */
+
+.img-tip .box-tip {border-style: solid; border-width: 2px; margin: -0.4em 0 1em;}
+.img-tip .box-tip p {padding-left: 1em; padding-right: 1em; margin: 1em 0; font-size: 16px;}
+.img-tip .box-tip p.title-tip {font-family: 'opensansextrabold', arial, sans-serif; font-size: 20px; line-height: 1.2; padding-top: .8em; padding-bottom: .8em; margin: 0;}
+
+/* The workshop & Equipment
+--------------------------------------------------------- */
+
+.bg-workshop p, .bg-workshop img {font-size: 18px; margin-bottom: 1em;}
+
+/* Vehicles for sale
+--------------------------------------------------------- */
+
+.filters {border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 3rem!important; margin-bottom: 3rem!important;}
+.btn-filter, .btn-filter:active, .btn-filter:focus {padding: 0; height: 44px;}
+.btn-filter svg.filter {width: 30px; height: 30px; margin: .5em 1em .5em 0!important;}
+ul.content-pagination {border-top-style: solid; border-top-width: 1px; padding-top: 2rem;}
+.page-link {font-size: 12px; padding: .6em 1em;}   
+.page-item .page-link, .page-item .page-link:focus {border-style: solid; border-width: 1px; border-radius: 0!important;}
+.page-link:focus {z-index: 3; outline: 0; box-shadow: none;}
+.page-item.active .page-link {font-family: 'opensansbold', arial, sans-serif; pointer-events: none;}
+ul.pagination li {margin: 0 5px;}
+ul.pagination li.paginator-toggle {display: none;}
+ul.pagination li.paginator-toggle-small {display: block;}
+ul.pagination li.hellipsis a {border: none; padding: .5rem 0; pointer-events: none;}
+.spinner-border {margin: 5rem!important;}
+
+/* Galleries (Offers, Vehicles, Gallery img)
+--------------------------------------------------------- */
+
+.box-gallery {border-style: solid; border-width: 2px;}
+.img-gallery {overflow-wrap: break-word; word-break: break-word;}
+.bg-gallery a {display: block;}
+.img-gallery img {margin-bottom: 0.5em;}
+.img-gallery p, .img-gallery .table-gallery {font-size: 14px;}
+.img-gallery .table-gallery tr td {overflow-wrap: break-word; word-break: break-word;}
+.img-gallery .table-gallery tr td:last-child {font-family: 'opensansbold', arial, sans-serif;}
+.img-gallery .price-gallery {font-family: 'opensansbold', arial, sans-serif; font-size: 22px; text-align: center;}
+.img-gallery-detail .input-group {width: 100%;}
+#carouselGalleryDetail .carousel-control-prev-icon, .carousel-control-next-icon {background-image: none; width: 3em; height: 3em;}
+#carouselGalleryDetail .carousel-indicators [data-bs-target] {width: 10px; height: 10px; border-radius: 100%;}
+#carouselGalleryDetail .carousel-inner {border-radius: 0;}
+.img-gallery-detail .title-gallery-detail {font-family: 'opensansextrabold', arial, sans-serif; border-radius: 0; font-size: 20px; margin-bottom: 1em; line-height: 1.2; padding: .8em; overflow-wrap: break-word; word-break: break-word;}
+.nomb {margin-bottom: 0!important;}
+.img-gallery-detail .table-gallery-detail, .img-gallery-detail .table-vehicle-detail {border-collapse: inherit; border-style: solid; border-width: 2px; border-radius: 0;}
+.img-gallery-detail .table-gallery-detail tr td, .img-gallery-detail .table-vehicle-detail tr td {padding-left: .8em; overflow-wrap: break-word; word-break: break-word;}
+.img-gallery-detail .table-vehicle-detail tr td:last-child {font-family: 'opensansbold', arial, sans-serif;}
+.img-gallery-detail .description-gallery-detail {margin-top: 1em;}
+.img-gallery-detail .description-gallery-detail p {margin-bottom: .5em;}
+.img-gallery-detail .description-gallery-detail p:last-child {font-family: 'opensansbold', arial, sans-serif;}
+.bg-gallery .content-txt-contact {font-size: 18px;}
+.form-contact .input-group-text {border: none; border-radius: 0; padding: 0 0.14em;}
+.bg-gallery svg.refresh {width: 30px; height: 30px; margin: .5em 1em!important;}
+.bg-gallery svg.close, .bg-gallery svg.print {width: 30px; height: 30px; margin-bottom: 1em!important;}
+.bg-gallery a.btn-close-detail {display: initial; margin-left: 1.5em;}
+.bg-gallery a.btn-print-detail {display: initial;}
+.gdpr a, .gdpr a:active, .gdpr a:focus {text-decoration: underline; display: initial;}
+.gdpr a:hover {text-decoration: none;}
+
+/* Galeria detail
+--------------------------------------------------------- */
+
+.modal-content {border-radius: 10px;}
+.modal-header {border-bottom: none;}
+.modal-body {padding: 0 1rem;}
+.modal-footer {border-top: none; padding: 1.5rem 0;}
+
+/* Contact
+--------------------------------------------------------- */
+
+.bg-contact .content-txt-contact {font-size: 18px;}
+.form-contact textarea {height: -webkit-fill-available;}
+.form-contact .input-group-text {border: none; border-radius: 0; padding: 0 0.14em;}
+.bg-contact svg.refresh {width: 30px; height: 30px; margin: .5em 1em!important;}
+.map-contact {height: 400px; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;}
+
+/* Maps img Google
+--------------------------------------------------------- */
+
+.maps {height: 600px; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;}
+a.btn-maps {display: block; width: 100%; height: 100%;}
+
+/* Suscribe Offer
+--------------------------------------------------------- */
+
+.bg-offer {text-align: center;}
+.bg-offer p {font-family: 'opensansregular', arial, sans-serif; font-size: 20px; margin-bottom: 2em;}
+.bg-offer p.title-offer {font-family: 'opensansextrabold', arial, sans-serif; font-size: 30px; margin-bottom: 0;}
+.bg-offer select, .bg-offer select.form-select, .bg-offer input[type=text], .bg-offer input[type=file], .bg-offer input[type=email], .bg-offer input[type=checkbox], .bg-offer textarea {border: 0; border-radius: 0; padding: .5em 1em;}
+.bg-offer select, .bg-offer select.form-select, .bg-offer input[type=checkbox] {cursor: pointer;}
+label.txt-checkbox a {text-decoration: underline; font-family: 'opensansbold', arial, sans-serif;}
+label.txt-checkbox a:hover {text-decoration: none;}
+.btn-offer, .btn-offer:active, .btn-offer:focus {border-style: solid; border-width: 2px; border-radius: 0; width: 100%; padding: .75em .5em;}
+
+/* Customize the label (the container) */
+label.txt-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: left;
+}
+
+/* Hide the browser's default checkbox */
+label.txt-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 1px;
+  height: 1px;
+}
+
+/* Create a custom checkbox */
+.bg-offer .checkmark {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  border: 0;
+  border-radius: 0;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.bg-offer .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+label.txt-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+label.txt-checkbox .checkmark:after {
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 9px;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* SubFooter
+--------------------------------------------------------- */
+
+.bg-subfooter .one-subfooter, .bg-subfooter .two-subfooter, .bg-subfooter .three-subfooter {text-align: center;}
+.bg-subfooter .subfooter-title {font-family: 'opensansbold', arial, sans-serif; font-size: 18px;}
+.bg-subfooter .subfooter-price {font-size: 30px;}
+
+/* Footer
+--------------------------------------------------------- */
+
+footer a {text-decoration: underline;}
+footer a:hover {text-decoration: none;}
+footer li {padding-bottom: .3em;}
+footer ul.social-media li {width: 2.5em; border: 0; padding: 0; margin: 0 .5em .5em; display: inline-block;}
+footer ul.social-media li a {max-width: 41px; display: block;}
+footer p.footer-title {font-family: 'opensansbold', arial, sans-serif; font-size: 18px; padding-bottom: .5em; text-align: left;}
+footer .one-footer, footer .one-footer p.footer-title {text-align: center;}
+footer .two-footer, footer .two-footer p.footer-title {text-align: center;}
+footer .copyright {border-top-style: solid; border-top-width: 1px; text-align: center; padding-top: 1em; margin-top: 3em; font-size: 14px;}
+
+/* Pop-up Cookies
+--------------------------------------------------------- */
+
+.pop-up-cookies {position: fixed; bottom: 0; z-index: 9999; width: 100%; padding: 1rem; text-align: center; background: #000; color: #999;}
+.pop-up-cookies a.link {text-decoration: underline; color: #FFF;}
+.pop-up-cookies a.link:hover {text-decoration: none;}
+.pop-up-cookies ul li a {display: inline-block; border-width: 2px; border-style: solid; cursor: pointer; padding: 10px; margin-top: 15px; background-color: transparent; border-color: #FFF; color: #FFF;}
+.pop-up-cookies ul li a:hover {border-width: 2px; border-style: solid; text-decoration: none; background-color: #FFF; border-color: #FFF; color: #000;}
+
+/* GDPR
+--------------------------------------------------------- */
+
+.txt_gdpr .title {font-family: 'opensansbold', arial, sans-serif; font-weight: bold; font-size: 22px;}
+.txt_gdpr ul {margin-bottom: 20px; list-style-type: disc; margin-left: 20px; font-size: 18px;}
+.txt_gdpr ul li {margin-bottom: 10px;}
+.txt_gdpr a {text-decoration: underline;}
+.txt_gdpr a:hover {text-decoration: none;}
+
+/* Media queries
+--------------------------------------------------------- */
+@media screen and (min-width: 437px) {}
+@media screen and (min-width: 576px) {ul.pagination li {margin: 0 10px;}}
+@media screen and (min-width: 768px) {
+.ms-md-auto {text-align: right;}
+.btn-offer, .btn-offer:active, .btn-offer:focus {width: 30%;}
+.bg-subfooter div.one-subfooter {text-align: left;}
+.bg-subfooter div.two-subfooter {text-align: center;}
+.bg-subfooter div.three-subfooter {text-align: right;}
+footer .one-footer, footer .one-footer p.footer-title {text-align: left;}
+footer .two-footer, footer .two-footer p.footer-title {text-align: right;}
+.map-contact {height: 100%;}
+.page-link {font-size: 16px}
+}
+@media screen and (min-width: 992px) {
+ul.navbar-nav li.nav-item {border: none; margin-right: 1.5em;}
+ul.navbar-nav li.nav-item:last-child {border: none;}
+.navbar {padding-top: 0; padding-bottom: 0;}
+ul.pagination li.paginator-toggle {display: block;}
+ul.pagination li.paginator-toggle-small {display: none;}
+}
+@media screen and (min-width: 1070px) {
+footer .two-footer ul li:last-child {margin-right: 0;}
+}
+@media screen and (min-width: 1200px) {
+.bg-limit {width: 100%; max-width: 1200px; margin-left: auto !important; margin-right: auto !important;}
+}
